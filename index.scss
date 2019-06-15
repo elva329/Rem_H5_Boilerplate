@@ -1,0 +1,111 @@
+@function px2rem($px){
+  $rem:37.5px;
+  @return ($px / $rem) + rem;
+}
+html{
+  background-color: #f8f8f8;
+}
+.header {
+  height: px2rem(40px);
+  width: 100%;
+  background-color: red;
+  .header-content {
+		padding-left: px2rem(32px);
+	}
+  .header-item {
+    float: left;
+    color: #ffcdce;
+    font-size: px2rem(16px);
+    margin-left: px2rem(20px);
+    line-height: px2rem(40px);
+
+    &:nth-child(2){
+      color:#fff;
+      font-size:px2rem(17px);
+    }
+   }
+}
+
+.banner-content {
+	position: relative;
+	.banner {
+		display: block;
+		width: 100%;
+	
+	}
+	.banner-title {
+		position: absolute;
+		left: px2rem(15px);
+		bottom: px2rem(15px);
+		font-size: px2rem(22px);
+		color: #FFFFFF;
+		text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+	  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	}
+}
+.news-content{
+  .news-item{
+    width:100%;
+    height:px2rem(90px);
+    padding-left: px2rem(15px);
+    padding-right: px2rem(15px);
+    box-sizing: border-box;
+  }
+  .item-inner{
+    height: 100%;
+    border-bottom: px2rem(1px) solid #e5e5e5;
+    overflow: hidden;
+    position: relative;
+  }
+  .news-img{
+    width:px2rem(95px);
+    height: px2rem(70px);
+    display: block;
+    margin-top:px2rem(10px);
+    margin-right:px2rem(15px);
+    float: left;
+  }
+  .news-title {
+		color: #404040;
+		font-size: px2rem(15px);
+		margin-top: px2rem(16px);
+		line-height: px2rem(20px);
+
+	}
+  .time {
+		color:#888;
+		font-size: px2rem(12px);
+		position: absolute;
+		left: px2rem(110px);
+		bottom: px2rem(17px);
+	}
+	.num {
+		position: absolute;
+		color: #888;
+		font-size: px2rem(12px);
+		right: px2rem(4px);
+		bottom: px2rem(17px);
+
+		//use before to make sure 
+		//when the number changes
+		//the icon is always right before it
+		&:before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			width: px2rem(13px);
+			height: px2rem(13px);
+			background-size: contain;
+			top: px2rem(0px);
+			left: px2rem(-17px);
+			background-image: url('./images/read.png');
+			@media (min-width: 769px) {
+				width: px2rem(4px);
+				height: px2rem(4px);
+				top: px2rem(0px);
+				left: px2rem(-5px);
+			}
+
+		}
+	}
+}
